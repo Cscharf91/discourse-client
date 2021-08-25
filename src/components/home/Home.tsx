@@ -11,7 +11,7 @@ const Home = () => {
         fontFamily: "'Bebas Neue', cursive",
       }}
     >
-      <Flexbox>
+      <Flexbox justify="flex-start">
         <Flexbox
           width="40%"
           align="start"
@@ -33,7 +33,10 @@ const Home = () => {
           </span>
           <button className="start-btn">LET'S GET STARTED!</button>
         </Flexbox>
-        <h1>Test</h1>
+        <Flexbox width="calc(100% - 450px)" justify="center" direction="column">
+          <span style={{ fontSize: "180px", userSelect: "none", }}>⚔️</span>
+          <p style={{ fontFamily: "Roboto", fontSize: "20px" }}>Discourse is the place to finally settle: is hotdog a sandwich?</p>
+        </Flexbox>
       </Flexbox>
       {/* <Flexbox style={{ gap: "10px", marginTop: "20px" }}>
         <Link to="/debates/create">
