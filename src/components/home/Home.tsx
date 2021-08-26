@@ -10,48 +10,45 @@ const Home = () => {
     <div
       style={{
         height: "calc(100vh - 70px)",
+        width: "100%",
+        display: "grid",
+        gridTemplateColumns: "4fr 13fr"
       }}
     >
-      <Flexbox justify="flex-start">
-        <Flexbox
-          width="40%"
-          align="start"
-          justify="start"
-          direction="column"
+        <div
           style={{
             fontFamily: "'Bebas Neue', cursive",
             alignSelf: "flex-start",
             background: "lightblue",
             padding: "20px",
-            maxWidth: "500px",
+            height: "100%",
             borderRight: "5px solid white",
           }}
         >
-          <span
-            style={{ color: "#262626", fontSize: "60px", marginTop: "150px" }}
-          >
-            Welcome to DISCOURSE.
-          </span>
-          <span
-            style={{
-              color: "rgb(60, 60, 60)",
-              marginBottom: "20px",
-              fontSize: "30px",
-            }}
-          >
-            It's Time To Prove The Internet Wrong.
-          </span>
-          <button
-            onClick={() => history.push("/debates")}
-            className="start-btn"
-          >
-            LET'S GET STARTED!
-          </button>
-        </Flexbox>
-        <Flexbox
-          width="calc(100% - 450px)"
-          justify="center"
-          direction="column"
+          <Flexbox direction="column" justify="flex-start">
+            <span
+              style={{ color: "#262626", fontSize: "60px", marginTop: "150px" }}
+            >
+              Welcome to DISCOURSE.
+            </span>
+            <span
+              style={{
+                color: "rgb(60, 60, 60)",
+                marginBottom: "20px",
+                fontSize: "30px",
+              }}
+            >
+              It's Time To Prove The Internet Wrong.
+            </span>
+            <button
+              onClick={() => history.push("/debates")}
+              className="start-btn"
+            >
+              LET'S GET STARTED!
+            </button>
+          </Flexbox>
+        </div>
+        <div
           style={{ background: "#647d86" }}
         >
           {/* <div
@@ -62,15 +59,14 @@ const Home = () => {
               height: "400px",
               padding: "15px",
               borderRadius: "15px",
-              background: "#647d86",
+              background: "#fff",
             }}
           >
             Sup
           </div> */}
           {/* <span style={{ fontSize: "250px", userSelect: "none", }}>⚔️</span> */}
           {/* <p style={{ fontFamily: "Roboto", fontSize: "20px" }}>Discourse is the place to finally settle: is hotdog a sandwich?</p> */}
-        </Flexbox>
-      </Flexbox>
+        </div>
       {/* <Flexbox style={{ gap: "10px", marginTop: "20px" }}>
         <Link to="/debates/create">
           <Button type="primary">Start Discourse</Button>

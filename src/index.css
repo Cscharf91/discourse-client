@@ -15,7 +15,7 @@ body {
 
 .navbar-logo:hover {
   transition: all 0.25s;
-  background: #083f61;
+  background: rgb(27, 45, 53);
 }
 
 .start-btn {

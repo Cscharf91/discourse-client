@@ -1,13 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState,createContext } from "react";
+import { User } from "../types";
 
 interface UserProviderProps {
   children: React.ReactNode;
-}
-
-interface User {
-  id: number;
-  username: string;
 }
 
 interface UserContextType {
