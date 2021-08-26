@@ -1,14 +1,15 @@
 import React from "react";
+import { Link, useHistory } from "react-router-dom";
 import Flexbox from "../../sharedComponents/Flexbox";
 
 const Home = () => {
+  const history = useHistory();
   // const { users } = useContext(UserContext);
 
   return (
     <div
       style={{
         height: "calc(100vh - 70px)",
-        fontFamily: "'Bebas Neue', cursive",
       }}
     >
       <Flexbox justify="flex-start">
@@ -17,9 +18,18 @@ const Home = () => {
           align="start"
           justify="start"
           direction="column"
-          style={{ alignSelf: "flex-start", background: "lightblue", padding: "20px", maxWidth: "500px" }}
+          style={{
+            fontFamily: "'Bebas Neue', cursive",
+            alignSelf: "flex-start",
+            background: "lightblue",
+            padding: "20px",
+            maxWidth: "500px",
+            borderRight: "5px solid white",
+          }}
         >
-          <span style={{ color: "#262626", fontSize: "60px", marginTop: "150px" }}>
+          <span
+            style={{ color: "#262626", fontSize: "60px", marginTop: "150px" }}
+          >
             Welcome to DISCOURSE.
           </span>
           <span
@@ -31,11 +41,34 @@ const Home = () => {
           >
             It's Time To Prove The Internet Wrong.
           </span>
-          <button className="start-btn">LET'S GET STARTED!</button>
+          <button
+            onClick={() => history.push("/debates")}
+            className="start-btn"
+          >
+            LET'S GET STARTED!
+          </button>
         </Flexbox>
-        <Flexbox width="calc(100% - 450px)" justify="center" direction="column">
-          <span style={{ fontSize: "180px", userSelect: "none", }}>⚔️</span>
-          <p style={{ fontFamily: "Roboto", fontSize: "20px" }}>Discourse is the place to finally settle: is hotdog a sandwich?</p>
+        <Flexbox
+          width="calc(100% - 450px)"
+          justify="center"
+          direction="column"
+          style={{ background: "#647d86" }}
+        >
+          {/* <div
+            style={{
+              fontFamily: "'Open Sans', sans-serif",
+              fontSize: "20px",
+              width: "300px",
+              height: "400px",
+              padding: "15px",
+              borderRadius: "15px",
+              background: "#647d86",
+            }}
+          >
+            Sup
+          </div> */}
+          {/* <span style={{ fontSize: "250px", userSelect: "none", }}>⚔️</span> */}
+          {/* <p style={{ fontFamily: "Roboto", fontSize: "20px" }}>Discourse is the place to finally settle: is hotdog a sandwich?</p> */}
         </Flexbox>
       </Flexbox>
       {/* <Flexbox style={{ gap: "10px", marginTop: "20px" }}>

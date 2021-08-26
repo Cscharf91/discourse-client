@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Roboto', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,6 +29,7 @@ body {
   border-radius: 20px;
   align-self: flex-end;
   color: #1e1e1e;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .start-btn:hover {

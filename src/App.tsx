@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import { UserProvider } from "./contexts/UserProvider";
 import "antd/dist/antd.css";
-import CreateDebate from "./components/home/CreateDebate";
+import CreateDebate from "./components/debates/CreateDebate";
 import Navbar from "./components/Navbar";
+import Debates from "./components/debates/Debates";
 
 axios.defaults.baseURL =
   process.env.NODE_ENV === "production"
@@ -24,6 +25,11 @@ function App() {
               path="/debates/create"
               exact
               component={() => <CreateDebate />}
+            />
+            <Route
+              path="/debates"
+              exact
+              component={() => <Debates />}
             />
           </Switch>
         </Router>

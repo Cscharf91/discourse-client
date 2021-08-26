@@ -9,8 +9,8 @@ const Navbar = () => {
       style={{
         height: "70px",
         width: "100%",
-        background: "rgb(10, 83, 128)",
-        borderBottom: "10px solid #1587ec",
+        background: "rgb(41, 70, 81)",
+        borderBottom: "5px solid white",
         boxShadow: "0 1px 3px 0 #626262",
         fontFamily: "'Bebas Neue', cursive",
       }}
@@ -36,7 +36,7 @@ const Navbar = () => {
           <Button
             style={{
               borderRadius: "5px",
-              background: "rgb(10, 83, 128)",
+              background: "rgb(36, 58, 66)",
               color: "#fff",
             }}
           >
@@ -45,7 +45,7 @@ const Navbar = () => {
           <Button
             style={{
               borderRadius: "5px",
-              background: "rgb(10, 83, 128)",
+              background: "rgb(36, 58, 66)",
               color: "#fff",
             }}
           >
@@ -54,7 +54,7 @@ const Navbar = () => {
           <Button
             style={{
               borderRadius: "5px",
-              background: "rgb(10, 83, 128)",
+              background: "rgb(36, 58, 66)",
               color: "#fff",
             }}
           >
@@ -63,7 +63,7 @@ const Navbar = () => {
           <Button
             style={{
               borderRadius: "5px",
-              background: "rgb(10, 83, 128)",
+              background: "rgb(36, 58, 66)",
               color: "#fff",
             }}
           >
