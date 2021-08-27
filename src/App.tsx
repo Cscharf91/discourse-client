@@ -2,11 +2,11 @@ import axios from "axios";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/home/Home";
-import { UserProvider } from "./contexts/UserProvider";
 import "antd/dist/antd.css";
 import CreateDebate from "./components/debates/CreateDebate";
 import Navbar from "./components/Navbar";
 import Debates from "./components/debates/Debates";
+import AllProviders from "./contexts/AllProviders";
 
 axios.defaults.baseURL =
   process.env.NODE_ENV === "production"
@@ -16,7 +16,7 @@ axios.defaults.baseURL =
 function App() {
   return (
     <div className="App">
-      <UserProvider>
+      <AllProviders>
         <Router>
         <Navbar />
           <Switch>
@@ -33,7 +33,7 @@ function App() {
             />
           </Switch>
         </Router>
-      </UserProvider>
+      </AllProviders>
     </div>
   );
 }
