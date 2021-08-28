@@ -7,14 +7,7 @@ const Home = () => {
   // const { users } = useContext(UserContext);
 
   return (
-    <div
-      style={{
-        height: "calc(100vh - 70px)",
-        width: "100%",
-        display: "grid",
-        gridTemplateColumns: "4fr 13fr"
-      }}
-    >
+    <div className="home-grid">
         <div
           style={{
             fontFamily: "'Bebas Neue', cursive",
@@ -22,12 +15,12 @@ const Home = () => {
             background: "lightblue",
             padding: "20px",
             height: "100%",
-            borderRight: "5px solid white",
+            borderRight: "5px solid #d0d0d0",
           }}
         >
           <Flexbox direction="column" justify="flex-start">
             <span
-              style={{ color: "#262626", fontSize: "60px", marginTop: "150px" }}
+              className="home-welcome"
             >
               Welcome to DISCOURSE.
             </span>

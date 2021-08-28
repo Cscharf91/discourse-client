@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Helvetica, Arial !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #647d86 !important;
 }
 
 .navbar-logo {
@@ -35,4 +36,40 @@ body {
 .start-btn:hover {
   transition: all 0.25s;
   background: #c62f2f;
+}
+
+.home-grid {
+  height: calc(100vh - 70px);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4fr 13fr;
+}
+
+.home-welcome {
+  color: #262626;
+  font-size: 50px;
+  margin-top: 150px;
+}
+
+.page-wrapper {
+  width: 60%;
+  min-height: calc(100vh - 70px);
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+@media (max-width: 1300px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 10fr;
+  }
+
+  .start-btn {
+    align-self: center;
+  }
+
+  .home-welcome {
+    margin-top: 10px;
+  }
 }
