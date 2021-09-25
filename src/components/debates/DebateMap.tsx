@@ -9,10 +9,10 @@ const DebateMap = ({ debate }: PropTypes) => {
   return (
     <div>
       <h3>{debate.topic}</h3>
-      <p>Debate Ends: {debate.debate_end}</p>
-      <p>Voting Ends: {debate.voting_end}</p>
       <p>Submitted by: {debate.username}</p>
       <p>Position: {debate.creator_position}</p>
+      <p>Opening: {debate.creator_opening}</p>
+      <p>Length: {debate.days}</p>
     </div>
   );
 };

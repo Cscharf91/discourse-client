@@ -4,9 +4,10 @@ import { ChildrenProps, Debate } from "../types";
 
 interface DebateContextType {
   debates: Debate[];
+  setDebates: React.Dispatch<React.SetStateAction<Debate[]>>;
 }
 
-const DebateContext = createContext<DebateContextType>({ debates: [] });
+const DebateContext = createContext<DebateContextType>({} as DebateContextType);
 
 export const DebateProvider = ({ children }: ChildrenProps) => {
   const [debates, setDebates] = useState<Debate[]>([]);
@@ -14,7 +15,6 @@ export const DebateProvider = ({ children }: ChildrenProps) => {
   useEffect(() => {
     const getDebates = async () => {
       const { data } = await axios.get("/debates");
-      console.log("data:", data);
       setDebates(data);
     };
     getDebates();
@@ -25,6 +25,7 @@ export const DebateProvider = ({ children }: ChildrenProps) => {
     <DebateContext.Provider
       value={{
         debates,
+        setDebates
       }}
     >
       {children}

@@ -14,16 +14,16 @@ export interface Debate {
   id: number;
   topic: string;
   category: string;
-  debate_end: string;
-  voting_end: string;
+  days: number;
   is_political?: number;
   competitor_id?: number;
   creator_id: number;
   creator_position: string;
-  creator_stance: string;
+  creator_opening: string;
   profile_pic?: string;
-  username?: string;
-  email?: string;
+  username: string;
+  email: string;
+  avatar?: string;
 }
 
 export interface ChildrenProps {

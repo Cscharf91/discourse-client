@@ -12,13 +12,13 @@ const Navbar = () => {
         height: "70px",
         width: "100%",
         background: "rgb(41, 70, 81)",
-        borderBottom: "5px solid #d0d0d0",
+        // borderBottom: "5px solid #d0d0d0",
         // boxShadow: "0 1px 3px 0 #626262",
         fontFamily: "'Bebas Neue', cursive",
       }}
     >
       <Flexbox justify="space-between">
-        <Link to="/">
+        <Link to="/home">
           <h1
             className="navbar-logo"
             style={{

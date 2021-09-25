@@ -1170,7 +1170,7 @@
     "core-js-pure" "^3.16.0"
     "regenerator-runtime" "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   "integrity" "sha512-OvwMLqNXkCXSz1kSm58sEsNuhqOx/fKpnUnKnFB5v8uDda5bLNEHNgKPvhDN6IU0LDcnHQ90LlJ0Q6jnyBSIBA=="
   "resolved" "https://registry.npmjs.org/@babel/runtime/-/runtime-7.15.3.tgz"
   "version" "7.15.3"
@@ -9189,7 +9189,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.0.0", "prop-types@^15.6.2", "prop-types@^15.7.2":
+"prop-types@^15.0.0", "prop-types@^15.5.8", "prop-types@^15.6.2", "prop-types@^15.7.2":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -9704,6 +9704,13 @@
     "regenerator-runtime" "^0.13.7"
     "whatwg-fetch" "^3.4.1"
 
+"react-deck-swiper@^1.0.9":
+  "integrity" "sha512-BaM1fYAkRebHXcs5aeA8gg3LQ2k8f9haTtIdZ42MVoefko0151fujaXaZpdX8ToTnkDvd4T8NvnFXc+te9LE7A=="
+  "resolved" "https://registry.npmjs.org/react-deck-swiper/-/react-deck-swiper-1.0.9.tgz"
+  "version" "1.0.9"
+  dependencies:
+    "react-spring" "^8.0.27"
+
 "react-dev-utils@^11.0.3":
   "integrity" "sha512-dx0LvIGHcOPtKbeiSUM4jqpBl3TcY7CDjZdfOIcKeznE7BWr9dg0iPG90G5yfVQ+p/rGNMXdbfStvzQZEVEi4A=="
   "resolved" "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-11.0.4.tgz"
@@ -9734,7 +9741,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@*", "react-dom@^16.0.0", "react-dom@^17.0.2", "react-dom@>= 16.9.0", "react-dom@>=16.0.0", "react-dom@>=16.9.0":
+"react-dom@*", "react-dom@^16.0.0", "react-dom@^16.8.6", "react-dom@^17.0.2", "react-dom@>= 16.8.0", "react-dom@>= 16.9.0", "react-dom@>=16.0.0", "react-dom@>=16.9.0":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -9873,6 +9880,14 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
+"react-spring@^8.0.27":
+  "integrity" "sha512-nDpWBe3ZVezukNRandTeLSPcwwTMjNVu1IDq9qA/AMiUqHuRN4BeSWvKr3eIxxg1vtiYiOLy4FqdfCP5IoP77g=="
+  "resolved" "https://registry.npmjs.org/react-spring/-/react-spring-8.0.27.tgz"
+  "version" "8.0.27"
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "prop-types" "^15.5.8"
+
 "react-tinder-card@^1.4.0":
   "integrity" "sha512-sE9pj0AyJ3TO9vsxQmTRDmrcvndLD6PFgSBvYDCIEkYIC00TDU7KqcjVkIMQTUvpwxPXCj00RXRqF1hWs4YJ6Q=="
   "resolved" "https://registry.npmjs.org/react-tinder-card/-/react-tinder-card-1.4.0.tgz"
@@ -9880,7 +9895,7 @@
   dependencies:
     "p-sleep" "^1.1.0"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.8.0", "react@^17.0.2", "react@>= 16", "react@>= 16.9.0", "react@>=15", "react@>=16.0.0", "react@>=16.9.0", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.8.0", "react@^16.8.6", "react@^17.0.2", "react@>= 16", "react@>= 16.8.0", "react@>= 16.9.0", "react@>=15", "react@>=16.0.0", "react@>=16.9.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

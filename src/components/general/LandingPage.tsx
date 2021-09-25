@@ -4,12 +4,12 @@ import Flexbox from "../sharedComponents/Flexbox";
 import Login from "../login/Login";
 import UserContext from "../../contexts/UserProvider";
 
-const Home = () => {
+const LandingPage = () => {
   const history = useHistory();
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    if (user) history.push("/debates");
+    if (user) history.push("/home");
   }, [user, history]);
 
   return (
@@ -59,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LandingPage;
