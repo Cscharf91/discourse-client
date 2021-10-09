@@ -1,36 +1,21 @@
-import axios from "axios";
-import React, { useEffect, useState,createContext } from "react";
-import { ChildrenProps, Debate } from "../types";
+import React, { useEffect, createContext, useContext } from "react";
+import { useStore } from "../stores/useStore";
+import { ChildrenProps } from "../types/types";
+import UserContext from "./UserProvider";
 
-interface DebateContextType {
-  debates: Debate[];
-  setDebates: React.Dispatch<React.SetStateAction<Debate[]>>;
-}
-
-const DebateContext = createContext<DebateContextType>({} as DebateContextType);
+const DebateContext = createContext({});
 
 export const DebateProvider = ({ children }: ChildrenProps) => {
-  const [debates, setDebates] = useState<Debate[]>([]);
+  const { user } = useContext(UserContext);
+  const debateSlice = useStore((state) => state.debateSlice);
+  const { getDebates, getRequests } = debateSlice.api;
 
   useEffect(() => {
-    const getDebates = async () => {
-      const { data } = await axios.get("/debates");
-      setDebates(data);
-    };
     getDebates();
-  }, []);
+    user && getRequests(user.id);
+  }, [getDebates, getRequests, user]);
 
-
-  return (
-    <DebateContext.Provider
-      value={{
-        debates,
-        setDebates
-      }}
-    >
-      {children}
-    </DebateContext.Provider>
-  );
+  return <DebateContext.Provider value={{}}>{children}</DebateContext.Provider>;
 };
 
 export default DebateContext;

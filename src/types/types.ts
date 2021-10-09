@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { DebateSlice } from "../stores/debateSlice";
 
 export interface User {
   id: number;
@@ -28,4 +29,30 @@ export interface Debate {
 
 export interface ChildrenProps {
   children: ReactNode;
+}
+
+export interface RequestForm {
+  challenger_position: string;
+  challenger_opening: string;
+}
+
+export interface DebateRequest {
+  challenger_username: string;
+  challenger_id: number;
+  debate_id: number;
+  receiver_id: number;
+  challenger_position: string;
+  challenger_opening: string;
+}
+
+export interface FormSubmission {
+  topic: string;
+  creator_position: string;
+  creator_opening: string;
+  days: string;
+  is_political: boolean;
+}
+
+export interface Store {
+  debateSlice: DebateSlice;
 }

@@ -1,8 +1,8 @@
 import { message } from "antd";
 import axios from "axios";
-import React, { useEffect, useState,createContext } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import { useHistory } from "react-router-dom";
-import { ChildrenProps, User } from "../types";
+import { ChildrenProps, User } from "../types/types";
 
 interface UserContextType {
   users: User[];
@@ -42,11 +42,11 @@ export const UserProvider = ({ children }: ChildrenProps) => {
     };
 
     const checkForLogin = () => {
-      const currentUser = localStorage.getItem('user');
-      const currentToken = localStorage.getItem('token');
+      const currentUser = localStorage.getItem("user");
+      const currentToken = localStorage.getItem("token");
       if (currentUser) setUser(JSON.parse(currentUser));
       if (currentToken) setToken(currentToken);
-    }
+    };
 
     checkForLogin();
     getUsers();
@@ -55,42 +55,41 @@ export const UserProvider = ({ children }: ChildrenProps) => {
   const handleSignUpSubmit = async (values: RegisterArgs) => {
     try {
       setLoading(true);
-      const { data } = await axios.post('/users/register', values);
+      const { data } = await axios.post("/users/register", values);
       const { user: currentUser, token: currentToken } = data;
-      console.log("data:", data);
       if (currentUser && currentToken) {
         setUser(currentUser);
         setToken(currentToken);
         localStorage.clear();
-        localStorage.setItem('user', JSON.stringify(currentUser));
-        localStorage.setItem('token', currentToken);
+        localStorage.setItem("user", JSON.stringify(currentUser));
+        localStorage.setItem("token", currentToken);
         history.push("/debates");
         setLoading(false);
       }
-    } catch(err) {
+    } catch (err) {
       console.log(err);
       setLoading(false);
     }
-  }
+  };
 
   const handleLoginSubmit = async (login: LoginArgs) => {
     try {
       setLoading(true);
-      const { data } = await axios.post('/users/login', login);
+      const { data } = await axios.post("/users/login", login);
       const { user: currentUser, token: currentToken } = data;
       setUser(currentUser);
       setToken(currentToken);
-      localStorage.setItem('user', JSON.stringify(currentUser));
-      localStorage.setItem('token', currentToken);
+      localStorage.setItem("user", JSON.stringify(currentUser));
+      localStorage.setItem("token", currentToken);
       setLoading(false);
       history.push("/debates");
       setLoginError(null);
-    } catch(err) {
+    } catch (err) {
       console.log("err:", err);
       setLoginError("The login info provided is incorrect. Please try again.");
       setLoading(false);
     }
-  }
+  };
 
   const handleLogOut = () => {
     setUser(null);
@@ -102,7 +101,7 @@ export const UserProvider = ({ children }: ChildrenProps) => {
         marginTop: "10vh",
       },
     });
-  }
+  };
 
   return (
     <UserContext.Provider

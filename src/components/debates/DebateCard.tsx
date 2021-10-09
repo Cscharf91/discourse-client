@@ -1,14 +1,15 @@
-import { Avatar, Col, Row, Tooltip } from "antd";
+import { Avatar, Button, Col, Row, Tooltip } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import React from "react";
-import { Debate } from "../../types";
+import { Debate } from "../../types/types";
 import Flexbox from "../sharedComponents/Flexbox";
 
 interface DebateProps {
   debate: Debate;
+  handleChallenge: (debate: Debate) => void;
 }
 
-const DebateCard = ({ debate }: DebateProps) => {
+const DebateCard = ({ debate, handleChallenge }: DebateProps) => {
   return (
     <Row justify="center" align="top" style={{ marginTop: "40px" }}>
       <Col xs={24} sm={22} lg={23}>
@@ -22,6 +23,7 @@ const DebateCard = ({ debate }: DebateProps) => {
                 minHeight: "100px",
                 width: "100px",
                 borderRight: "1px solid rgb(242, 242, 242)",
+                padding: "10px",
               }}
             >
               <Tooltip title={debate.username}>
@@ -41,6 +43,21 @@ const DebateCard = ({ debate }: DebateProps) => {
                 {debate.creator_position}
               </h5>
             </Flexbox>
+
+            <div
+              style={{
+                justifySelf: "flex-end",
+                marginRight: "15px",
+                height: "100%",
+              }}
+            >
+              <Button
+                onClick={() => handleChallenge(debate)}
+                style={{ background: "#0059ac", color: "#fff" }}
+              >
+                CHALLENGE!
+              </Button>
+            </div>
           </Flexbox>
         </div>
       </Col>

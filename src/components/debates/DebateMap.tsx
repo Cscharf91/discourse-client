@@ -1,5 +1,4 @@
-import React from "react";
-import { Debate } from "../../types";
+import { Debate } from "../../types/types";
 
 interface PropTypes {
   debate: Debate;

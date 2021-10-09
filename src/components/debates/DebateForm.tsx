@@ -1,35 +1,23 @@
 import { Button, Form, Input, message, Radio } from "antd";
-import axios from "axios";
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import DebateContext from "../../contexts/DebateProvider";
 import UserContext from "../../contexts/UserProvider";
+import { useStore } from "../../stores/useStore";
+import { FormSubmission } from "../../types/types";
 
 const { TextArea } = Input;
 
-interface FormSubmission {
-  topic: string;
-  creator_position: string;
-  creator_opening: string;
-  days: string;
-  is_political: boolean;
-}
-
 const DebateForm = () => {
+  const debateSlice = useStore((state) => state.debateSlice);
+  const { addDebate } = debateSlice.api;
   const { user } = useContext(UserContext);
-  const { setDebates } = useContext(DebateContext);
   const history = useHistory();
 
   const handleSubmit = async (values: FormSubmission) => {
     if (user?.id) {
       try {
-        const { data } = await axios.post("/debates", {
-          ...values,
-          days: +values.days,
-          creator_id: user?.id,
-        });
-        setDebates(prevState => [data, ...prevState]);
-        history.push(`/debates/${data.id}`);
+        const addedDebate = addDebate(values, user.id);
+        history.push(`/debates/${addedDebate}`);
       } catch (error) {
         message.error(
           "There was an issue posting this debate. Please try again later."

@@ -1,12 +1,43 @@
-import { Col, Row } from "antd";
-import React, { useContext } from "react";
-import DebateContext from "../../contexts/DebateProvider";
+import { Col, message, Modal, Row } from "antd";
+import axios from "axios";
+import React, { useContext, useState } from "react";
+import UserContext from "../../contexts/UserProvider";
+import { messageError } from "../../helpers/messageError";
+import { useStore } from "../../stores/useStore";
+import { Debate, RequestForm } from "../../types/types";
 import SubNavbar from "../general/SubNavbar";
 import DebateCard from "./DebateCard";
 import { DebateFilters } from "./DebateFilters";
+import { DebateRequestForm } from "./debateRequest/DebateRequestForm";
 
 const Debates = () => {
-  const { debates } = useContext(DebateContext);
+  const debateSlice = useStore((state) => state.debateSlice);
+  const { debates } = debateSlice;
+  const { user } = useContext(UserContext);
+  const [isChallengeVisible, setIsChallengeVisible] = useState(false);
+  const [selectedDebate, setSelectedDebate] = useState<Debate | null>(null);
+
+  const handleChallenge = (debate: Debate) => {
+    setSelectedDebate(debate);
+    setIsChallengeVisible(true);
+  };
+
+  const handleSubmitRequest = async (form: RequestForm) => {
+    try {
+      if (user && selectedDebate) {
+        await axios.post("/debates/requests", {
+          ...form,
+          challenger_id: user.id,
+          debate_id: selectedDebate.id,
+          receiver_id: selectedDebate.creator_id,
+        });
+        setIsChallengeVisible(false);
+        message.success("Request sent!");
+      }
+    } catch (error) {
+      messageError("sending your request");
+    }
+  };
 
   return (
     <>
@@ -44,13 +75,29 @@ const Debates = () => {
             >
               {React.Children.toArray(
                 debates.map((debate) => {
-                  return <DebateCard debate={debate} />;
+                  return (
+                    <DebateCard
+                      handleChallenge={handleChallenge}
+                      debate={debate}
+                    />
+                  );
                 })
               )}
             </Col>
           </Row>
         </Col>
       </Row>
+      <Modal
+        visible={isChallengeVisible}
+        onCancel={() => setIsChallengeVisible(false)}
+        destroyOnClose
+        footer={null}
+      >
+        <DebateRequestForm
+          debate={selectedDebate}
+          onFinish={handleSubmitRequest}
+        />
+      </Modal>
     </>
   );
 };
