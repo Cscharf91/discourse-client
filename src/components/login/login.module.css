@@ -1,0 +1,31 @@
+.loginContainer {
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #e5f1f4;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.loginHeader {
+  font-size: 40px;
+  font-family: "Bebas Neue", cursive;
+  text-align: center;
+}
+
+.registerBtnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formErrorContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.formErrorSpan {
+  font-size: 10px;
+  text-align: center;
+  color: var(--error);
+}

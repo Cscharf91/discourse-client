@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../contexts/UserProvider";
 import { BellOutlined } from "@ant-design/icons";
@@ -10,6 +10,11 @@ const Navbar = () => {
   const { user, handleLogOut } = useContext(UserContext);
   const debateSlice = useStore((state) => state.debateSlice);
   const { debateRequests } = debateSlice;
+
+  useEffect(() => {
+    // console.log("debateSlice :>> ", debateSlice);
+    console.log("debateSlice.debateRequests :>> ", debateSlice.debateRequests);
+  }, [debateSlice.debateRequests]);
 
   return (
     <div

@@ -1,35 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import RegistrationForm from "./RegistrationForm";
+import styles from "./login.module.css";
 
 const Register = () => {
   return (
     <div
+      className={styles.loginContainer}
       style={{
-        marginTop:"20px",
-        padding: "15px",
-        borderRadius: "15px",
-        background: "#e5f1f4",
-        borderBottom: "3px solid #294651",
+        marginTop: "20px",
       }}
     >
-      <h1
-        style={{
-          fontSize: "40px",
-          fontFamily: "'Bebas Neue', cursive",
-          textAlign: "center",
-        }}
-      >
-        Create Account
-      </h1>
+      <h1 className={styles.loginHeader}>Create Account</h1>
       <RegistrationForm />
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "flex-end",
-        }}
-      >
+      <div className={styles.registerBtnContainer}>
         <Link to="/login">Already have an account? Log in.</Link>
       </div>
     </div>

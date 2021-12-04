@@ -1,9 +1,10 @@
 import { Button, Form, Input } from "antd";
 import React, { useContext } from "react";
 import UserContext from "../../contexts/UserProvider";
+import styles from "./login.module.css";
 
 const LoginForm = () => {
-  const { handleLoginSubmit, loginError, loading } = useContext(UserContext)
+  const { handleLoginSubmit, loginError, loading } = useContext(UserContext);
   return (
     <Form
       name="basic"
@@ -19,9 +20,13 @@ const LoginForm = () => {
       onFinish={handleLoginSubmit}
       autoComplete="off"
     >
-      {loginError && <div style={{ width: "100%", display: "flex", justifyContent: "center", marginBottom: "15px"}}>
-        <span style={{ fontSize: "10px", textAlign: "center", color: "red" }}>The login info provided is incorrect. Please try again.</span>
-      </div>}
+      {loginError && (
+        <div className={styles.formErrorContainer}>
+          <span className={styles.formErrorSpan}>
+            The login info provided is incorrect. Please try again.
+          </span>
+        </div>
+      )}
 
       <Form.Item
         label="Username"

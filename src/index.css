@@ -1,3 +1,11 @@
+:root {
+  --primary-color: rgb(41, 70, 81);
+  --primary-hover: rgb(27, 45, 53);
+  --secondary-color: rgb(27, 45, 53);
+  --light-color: rgb(201, 224, 230);
+  --error: rgb(153, 0, 0);
+}
+
 body {
   margin: 0;
   font-family: Helvetica, Arial !important;
@@ -16,7 +24,7 @@ body {
 
 .navbar-logo:hover {
   transition: all 0.25s;
-  background: rgb(27, 45, 53);
+  background: var(--primary-hover);
 }
 
 .start-btn {
@@ -30,7 +38,7 @@ body {
   border-radius: 20px;
   align-self: flex-end;
   color: #1e1e1e;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .start-btn:hover {
@@ -71,7 +79,7 @@ body {
 
 .card-header {
   height: 2em;
-  background: rgb(27, 45, 53);
+  background: var(--secondary-color);
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   color: #fff;

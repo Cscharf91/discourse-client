@@ -43,6 +43,7 @@ export const debateSlice = (set: any, get: any): DebateSlice => ({
     getRequests: async (userId) => {
       try {
         const { data } = await axios.get(`/debates/requests/${userId}`);
+        console.log(`data`, data);
         set((state: Store) => ({
           debateSlice: { ...state.debateSlice, debatesRequests: data },
         }));
